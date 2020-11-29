@@ -11,7 +11,7 @@ token2idx, idx2token = loadVocab(vocabPath)
 BATCH_SIZE = 4
 train_inputs, train_labels = loadCroupPair(devSrcPath, devTgtPath, 'jieba.vocab')
 train_data = TensorDataset(train_inputs, train_labels)
-train_sampler = RandomSampler(train_data)
+train_sampler = RadomSampler(train_data)
 train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=BATCH_SIZE)
 
 for data, labels in train_dataloader:
