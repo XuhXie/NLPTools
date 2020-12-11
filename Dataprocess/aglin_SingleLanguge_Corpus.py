@@ -38,21 +38,6 @@ def jacSeten(x, y, repeat = True, tokenMode = 'jieba'):
     return jaccard(x, y)
 
 
-
-def loadCiba(df):
-    originList = []
-    tranlatedList = []
-    replaceList = []
-    for i in range(df.shape[0]):
-        origin = df.loc[i, '原语句'].strip()
-        tranlate = df.loc[i, '翻译句'].strip()
-        re100 = df.loc[i, '替换_100%'].strip()
-        originList.append(origin)
-        tranlatedList.append(tranlate)
-        replaceList.append(re100)
-    return originList, tranlatedList, replaceList
-
-
 def addSeparator(tokens):
     result = []
     temp = ''
