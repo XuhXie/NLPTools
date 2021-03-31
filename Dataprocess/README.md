@@ -14,6 +14,8 @@ src = ["some sentences", "some sentence"]
 tgt = ["some sentences", "some sentence"]
 src, tgt =  make_Croup(src=src, tgt=tgt, maxlen=64, mode='long', isPrint=True)
 ```
+#### make_vocab.py is from [KEPN](https://github.com/LINMouMouZiBo/KEPN)
+make vocab from dataset
 
 
 
