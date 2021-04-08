@@ -1,6 +1,11 @@
 import copy
 
 def split_char(str_, tag='[unk]', relapce=True):
+    """
+    str_: a string
+    replace: if True, english words will be replaced by tag
+    tag: default replace unk string
+    """
     english = 'abcdefghijklmnopqrstuvwxyz0123456789'
     output = []
     buffer = ''
@@ -32,6 +37,11 @@ def split_char(str_, tag='[unk]', relapce=True):
 
 
 def recover(lists_, replaces_, tag='[UNK]'):
+    """
+    recover unk sentences with the replaced words
+    lists_: [[...], [...], ...] list of sentences, every sentence is a list of tokens
+    replaces: [[...], [...], ...] replaced words of every sentences
+    """
     result = []
     for senten, reps in zip(lists_, replaces_):
         temp = copy.deepcopy(senten)
