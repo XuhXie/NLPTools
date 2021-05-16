@@ -11,6 +11,7 @@ from torch.autograd import Variable
 class SharedTransformer(nn.Module):
     def __init__(self, d_model, vocab, nhead, num_encoder, num_decoder, d_ff, dropout):
         super(SharedTransformer, self).__init__()
+        self.d_model = d_model
         self.shared_embed_pos = nn.Sequential(Embeddings(d_model, vocab), PositionalEncoding(d_model, dropout))
         self.encoder = Encoder(num_layers=num_encoder, d_model=d_model, nhead=nhead, d_ff=d_ff, dropout=dropout)
         self.decoder = Decoder(num_layers=num_decoder, d_model=d_model, nhead=nhead, d_ff=d_ff, dropout=dropout)
